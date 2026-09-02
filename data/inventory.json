@@ -1,0 +1,23 @@
+[
+  {
+    "sku": "A1",
+    "name": "Болты М6",
+    "category": "Крепёж",
+    "quantity": 120,
+    "min_quantity": 20
+  },
+  {
+    "sku": "A2",
+    "name": "Гайки М6",
+    "category": "Крепёж",
+    "quantity": 8,
+    "min_quantity": 15
+  },
+  {
+    "sku": "B1",
+    "name": "Провод ПВС 2x1.5",
+    "category": "Электрика",
+    "quantity": 50,
+    "min_quantity": 10
+  }
+]
