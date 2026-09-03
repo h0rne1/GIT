@@ -19,7 +19,13 @@
 
 ## Установка и запуск
 
-_Будет добавлено после реализации CLI (см. ветку `feature/cli`)._
+```bash
+pip install -r requirements.txt
+
+python main.py add A1 "Болты М6" Крепёж 120 --min-quantity 20
+python main.py list
+python main.py remove A1
+```
 
 ## Структура проекта
 
