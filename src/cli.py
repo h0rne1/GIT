@@ -2,6 +2,7 @@ import argparse
 
 from .models import Item
 from .storage import InventoryStorage
+from .reports import low_stock_report
 
 
 def cmd_add(args, storage: InventoryStorage):
@@ -42,6 +43,20 @@ def cmd_list(args, storage: InventoryStorage):
         )
 
 
+def cmd_report(args, storage: InventoryStorage):
+    items = storage.load_items()
+    low = low_stock_report(items)
+    if not low:
+        print("Товаров с низким остатком нет")
+        return
+    print("Товары с низким остатком:")
+    for item in low:
+        print(
+            f" - {item.sku} {item.name}: осталось {item.quantity} "
+            f"(мин. {item.min_quantity})"
+        )
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="warehouse", description="Учёт складских товаров"
@@ -62,6 +77,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     p_list = sub.add_parser("list", help="Показать все товары")
     p_list.set_defaults(func=cmd_list)
+
+    p_report = sub.add_parser("report", help="Отчёт по товарам с низким остатком")
+    p_report.set_defaults(func=cmd_report)
 
     return parser
 

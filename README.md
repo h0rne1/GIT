@@ -15,7 +15,7 @@
 - [x] Добавление товара на склад (`add`)
 - [x] Удаление товара со склада (`remove`)
 - [x] Просмотр списка товаров (`list`)
-- [ ] Отчёты по остаткам (в разработке)
+- [x] Отчёты по остаткам (команда `report`)
 
 ## Установка и запуск
 
@@ -25,6 +25,7 @@ pip install -r requirements.txt
 python main.py add A1 "Болты М6" Крепёж 120 --min-quantity 20
 python main.py list
 python main.py remove A1
+python main.py report
 ```
 
 ## Структура проекта
