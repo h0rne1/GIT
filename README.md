@@ -58,3 +58,4 @@ warehouse-inventory/
 
 - [project-notes.md](project-notes.md) — заметки и план разработки
 - [api-plan.md](api-plan.md) — план REST API для будущих этапов курса
+- [git-conflict.md](git-conflict.md) — описание конфликта при слиянии веток и его решения
